@@ -18,7 +18,7 @@ public class stringBuffer {
            buffer = "";  
         }
         buffer += nextChunk;
-     }
+     } 
      private static final int N = 100;
      private static void countTo_N_Improved() {
         for (int count = 2; count <= N; count = count +2) {
