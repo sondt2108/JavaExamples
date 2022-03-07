@@ -2,6 +2,7 @@ package exampleArr;
 
 import java.util.*;
 
+// array là một tập hợp các phần tử có cùng kiểu dữ liệu
 public class javaArrEx {
 
     private static void bubbleSort(int[] arr) {
@@ -23,8 +24,11 @@ public class javaArrEx {
         int array[] = { 2, 5, -2, 6, -3, 8, 0, -7, -9, 4 };
 
         // sắp xếp lại array
+        // Array sắp xếp tất cả các phần tử của mảng
         Arrays.sort(array);
         printArray("Sorted array", array);
+
+        // binarySearch() giúp tìm kiếm phần tử có giá trị xác định trong mảng đã sắp xếp
         int index = Arrays.binarySearch(array, 2);
         System.out.println("Found 2 @ " + index);
 
@@ -42,7 +46,7 @@ public class javaArrEx {
 
         System.out.println("=====================Bubble sort=========================");
 
-        // bubble sort
+        // bubble sort (So sánh 2 phần tử cạnh nhau)
 
         int arr[] = { 2, 5, -2, 6, -3, 8, 0, -7, -9, 4 };
         System.out.println("Array Before Bubble Sort");
@@ -59,9 +63,8 @@ public class javaArrEx {
         }
 
         System.out.println("=====================Dimension of Array(Kích thước của mảng)=========================");
-        String[][] data = new String[2][5];
+        String[] data = new String[5];
         System.out.println("Dimension 1: " + data.length);
-        System.out.println("Dimension 2: " + data[0].length);
 
         System.out.println("=====================Array output=========================");
 
@@ -75,15 +78,26 @@ public class javaArrEx {
         }
 
         String[] arrStr = new String[] { "Tutorials", "Point", ".com" };
+
+        //  toString() của mảng được sử dụng để hiển thị tất cả các phần tử của một mảng.
         System.out.println(Arrays.toString(arrStr));
 
         String[][] deepArr = new String[][] { { "Sai", "Gopal" }, { "Pallavi", "Priya" } };
         System.out.println(Arrays.toString(deepArr)); // no output
+
+        //  Arrays.deepToString () được sử dụng để nhận được biểu diễn chuỗi của các mảng đa chiều.
         System.out.println(Arrays.deepToString(deepArr));
 
         System.out.println("=====================Search Max Min=========================");
 
         Integer[] numbers = { 8, 2, 7, 1, 4, 9, 5 };
+
+        /*Collection có nhiều phương thức tĩnh (gọi mà không cần tạo ra đối tượng Collections) tiện dụng như:
+        sort(Collection c) sắp xếp danh sách
+        max(Collection c) lấy giá trị lớn nhất trong c
+        reverse(List list) đảo ngược thứ tự
+        shuffle(List list) sắp xếp danh sách ngẫu nhiên*/
+
         int min = (int) Collections.min(Arrays.asList(numbers));
         int max = (int) Collections.max(Arrays.asList(numbers));
 
@@ -107,10 +121,13 @@ public class javaArrEx {
         System.out.println("Smallest Number is : " + s);
 
         System.out.println("=====================Merge two arrays=========================");
-
+        // hợp nhất 2 mảng
+        // asList() được sử dụng để tạo một danh sách từ một mảng được chỉ định.
         String strA[] = { "A", "E", "I" };
         String strB[] = { "O", "U" };
         List list = new ArrayList(Arrays.asList(strA));
+
+        // addAll() chèn tất cả các phần tử trong tập hợp đã chỉ định vào danh sách này, bắt đầu từ vị trí đã chỉ định.
         list.addAll(Arrays.asList(strB));
         Object[] c = list.toArray();
         System.out.println(Arrays.toString(c));
@@ -133,6 +150,8 @@ public class javaArrEx {
             System.out.print(arrNumberC[i] + " ");
         System.out.println();
         System.out.println("=====================Arrays.fill=========================");
+
+        // arrays.fill hàm giúp thay đổi giá trị của tất cả các phần tử trong mảng thành một giá trị mới.
         int arrFill[] = new int[6];
         Arrays.fill(arrFill, 100);
 
@@ -152,6 +171,17 @@ public class javaArrEx {
         String[] extended = new String[5];
         extended[3] = "D";
         extended[4] = "E";
+
+        /*System.arraycopy(Object src, int srcPos, Object dest, int destPos, int length);
+
+        Trong đó:
+
+        scr là mảng nguồn cần sao chép
+        srcPos là vị trí bắt đầu sao chép trong mảng nguồn
+        dest là mảng đích chứa kết quả sao chép
+        destPos là vị trí bắt đầu dán kết quả vào mảng đích
+        length là số phần tử được copy từ mảng nguồn*/
+
         System.arraycopy(names, 0, extended, 0, names.length);
 
         for (String str : extended) {
@@ -176,7 +206,7 @@ public class javaArrEx {
             System.out.println("Not same");
         }
 
-        //
+        //arrays.equals() được sử dụng để so sánh hai mảng có bằng nhau hay không.
         if (Arrays.equals(arr1, arr2)) {
             System.out.println("Same");
         } else {
@@ -195,6 +225,8 @@ public class javaArrEx {
         for (Integer number : arrRemove) {
             System.out.println("Number = " + number);
         }
+
+        // .remove xóa phần tử có chỉ số index. nếu index > size() hoặc index < 0 thì ném ra ngoại lệ IndexOutOfBoundsException
         arrRemove.remove(2);
         System.out.println("Now, Size of list: " + arrRemove.size());
 
@@ -203,7 +235,7 @@ public class javaArrEx {
         }
 
         System.out.println("=====================Remove an array from another array=========================");
-
+        // xóa 1 mảng khỏi một mảng khác
         ArrayList objArray = new ArrayList();
         ArrayList objArray2 = new ArrayList();
         objArray2.add(0, "common1");
@@ -215,9 +247,8 @@ public class javaArrEx {
         objArray.add(2, "notcommon2");
         System.out.println("Array elements of array1" + objArray);
         System.out.println("Array elements of array2" + objArray2);
-        // objArray.retainAll(objArray2);
-        // System.out.println("Array1 after retaining common elements of array2 &
-        // array1" + objArray);
+        
+        // .removeAll  sử dụng để xóa tất cả các phần tử của một tập trong mảng arraylist.
         objArray.removeAll(objArray2);
         System.out.println("Array1 after removing array2 from array1" + objArray);
 

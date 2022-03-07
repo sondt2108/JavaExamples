@@ -1,0 +1,41 @@
+Interface (giao diện) là một kiểu dữ liệu tham chiếu tương tự như Class  nhưng chỉ có thể chứa hằng số và tên các phương thức, không có phần thân phương thức (phương thức trừu tượng).
+
+class là mô tả về các đối tượng sẽ được tạo ra. Mỗi class có tên class, trong class có các thuộc tính như là dữ liệu của class và (các hàm) gọi là các phương thức.
+
+extends là sự liên quan giữa hai class với nhau, trong đó có class cha (superclass) và class con (subclass). Khi kế thừa class con được hưởng tất cả các phương thức và thuộc tính của class cha.
+
+Map : Là một tập các cặp khóa key-value, value có thể giống nhau nhưng key không được trùng nhau.
+      Được sử dụng trong trường hợp muốn select, update, search phần tử thông qua key.
+
+    + HashMap:  Lưu trữ dữ liệu dưới dạng key - value, key là duy nhất.
+                Nó có thể có 1 key là null và nhiều giá trị null.
+                Nó duy trì các phần tử KHÔNG theo thứ tự.
+
+    + LinkedHashMap : 
+                LinkedHashMaplưu trữ dữ liệu dưới dạng cặp key và value.
+                Nó chứa các key duy nhất.
+                Nó có thể có 1 key là null và nhiều giá trị null.
+                Nó duy trì các phần tử theo thứ tự chèn.
+    + TreeMap : 
+                TreeMap lưu trữ dữ liệu dưới dạng cặp key và value.
+                Nó chứa các key duy nhất.
+                Nó KHÔNG cho phép bất kỳ key nào là null và nhưng có thể có nhiều giá trị null.
+                Nó duy trì các phần tử được thêm vào theo thứ tự key tăng dần.
+
+    + HashMapTable : 
+                Là một mảng của list. Mỗi list được biết đến như một bucket (vùng chứa) các phần tử. Vị trí của một bucket được xác định bằng việc gọi phương thức hashcode()
+                Lưu trữ dưới dạng một cặ key-value
+                Nó chứa các key duy nhất
+                Nó KHÔNG thể có bất kỳ key hoặc giá trị nào là null.
+
+Use HashMap: When there is no need to maintain any order of elements and we are working on single threaded environment.
+(Khi không cần duy trì bất kỳ thứ tự phần tử nào và chúng ta đang làm việc trên môi trường luồng đơn.)
+
+Use LinkedHashMap: When there is a need to maintain insertion order of elements and we are working on single threaded environment.
+(Khi cần duy trì thứ tự chèn của các phần tử và chúng tôi đang làm việc trên môi trường luồng đơn.)
+
+Use TreeMap: When there is a need to maintain ascending order of elements and we are working on single threaded environment.
+(Khi cần duy trì thứ tự tăng dần của các phần tử và chúng tôi đang làm việc trên môi trường luồng đơn.)
+
+Use HashTable: When there is no need to maintain any order of elements and we are working on multi-threaded environment.
+(Khi không cần duy trì bất kỳ thứ tự phần tử nào và chúng ta đang làm việc trên môi trường đa luồng.)

@@ -1,0 +1,24 @@
+Access modifier
+    + private : truy cập trong phạm vi lớp
+    + default : không khai báo modifier => mặc định, chỉ được phép truy cập trong package
+    + protected : được truy cập bên trong và bên ngoài package nhưng phải kế thừa
+    + public : truy cập ở mọi nơi
+
+Non-access Modifiers − final, abstract, strictfp
+
+
+Java Collections
+    Interface Collections:
+        + list interface : được sắp xếp có thứ tự và có thể có giá trị giống nhau
+        + Set : Các phần tử trong Set là duy nhất
+        + sortedSet : Là 1 dạng riêng của Set Interface, trong đó giá trị của các phần tử mặc định được sắp xếp tăng dần.
+        + Map : Giá trị của mỗi phần tử trong Map bao gồm 2 phần đó là khóa (key) và giá trị tương ứng của key đó (value) và khóa của các phần tử này là duy nhất.
+        + SortMap : Là 1 dạng riêng của Map Interface, trong đó giá trị key được sắp xếp tăng dần.
+    
+    Class Collections
+        + LinkedList : Là 1 cấu trúc dữ liệu lưu trữ các phần tử dưới dạng danh sách. Các phần tử trong LinkedList được sắp xếp có thứ tự và có thể có giá trị giống nhau.
+        + ArrayList : Là kiểu danh sách sử dụng cấu trúc mảng để lưu trữ phần tử. Thứ tự các phần tử dựa theo thứ tự lúc thêm vào và giá trị của các phần tử này có thể trùng nhau.
+        + HashSet : Thứ tự các phần tử trong HashSet không dựa theo thứ tự lúc thêm vào và giá trị của các phần tử này là duy nhất.
+        + TreeSet : Các phần tử trong TreeSet mặc định được sắp xếp tăng dần và giá trị của các phần tử này là duy nhất.
+        + HashMap : Giá trị của mỗi phần tử trong HashMap bao gồm 2 phần đó là khóa (key) và giá trị tương ứng của key đó (value) và khóa của các phần tử này là duy nhất. HashMap cho phép truy xuất trực tiếp dữ liệu bằng khóa duy nhất của nó.
+        + TreeMap : Giá trị của mỗi phần tử trong TreeMap bao gồm 2 phần đó là khóa (key) và giá trị tương ứng của key đó (value) và khóa của các phần tử này là duy nhất. Giá trị của các phần tử trong TreeMap được sắp xếp tăng dần.

@@ -11,6 +11,8 @@ public class reverseArr {
         arrayList.add("D");
         arrayList.add("E");
         System.out.println("Before Reverse Order: " + arrayList);
+
+      //   Collections.reverse được sử dụng để đảo ngược thứ tự của các phần tử trong danh sách được chỉ định..
         Collections.reverse(arrayList);
         System.out.println("After Reverse Order: " + arrayList);
 
@@ -23,8 +25,8 @@ public class reverseArr {
       } 
       for (int i = 0; i < numbers.length / 2; i++) {
          int temp = numbers[i];//=1
-         System.out.print(temp + "::");
-         numbers[i] = numbers[numbers.length - 1 - i]; // number[1] = number[9] = 10
+         //System.out.println(temp + " ");
+         numbers[i] = numbers[numbers.length - 1 - i]; // number[0] = number[9] = 10
          numbers[numbers.length - 1 - i] = temp; // number[9] = 1
       } 
       System.out.println("\nArray after reverse:");

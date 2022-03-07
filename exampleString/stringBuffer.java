@@ -14,7 +14,6 @@ public class stringBuffer {
          System.out.println("nextChunk.lenght : " +nextChunk.length() );
          System.out.println("buffer.length() + nextChunk.length(): "+buffer.length() + nextChunk.length());
         if(buffer.length() + nextChunk.length() > MAX_LENGTH) {
-           System.out.println("113: "+buffer);
            buffer = "";  
         }
         buffer += nextChunk;
