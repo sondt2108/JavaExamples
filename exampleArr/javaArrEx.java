@@ -5,20 +5,7 @@ import java.util.*;
 // array là một tập hợp các phần tử có cùng kiểu dữ liệu
 public class javaArrEx {
 
-    private static void bubbleSort(int[] arr) {
-        int n = arr.length;
-        System.out.println("lenght: " + n);
-        int temp = 0;
-        for (int i = 0; i < n; i++) {
-            for (int j = 1; j < (n - i); j++) {
-                if (arr[j - 1] > arr[j]) {
-                    temp = arr[j - 1];
-                    arr[j - 1] = arr[j];
-                    arr[j] = temp;
-                }
-            }
-        }
-    }
+
 
     public static void main(String[] args) throws Exception {
         int array[] = { 2, 5, -2, 6, -3, 8, 0, -7, -9, 4 };
@@ -32,138 +19,14 @@ public class javaArrEx {
         int index = Arrays.binarySearch(array, 2);
         System.out.println("Found 2 @ " + index);
 
-        System.out.println("=====================Linear Search(tìm kiếm tuyến tính)=========================");
 
-        int[] a = { 2, 5, -2, 6, -3, 8, 0, -7, -9, 4 };
-        int target = 0;
 
-        for (int i = 0; i < a.length; i++) {
-            if (a[i] == target) {
-                System.out.println("Element found at index " + i);
-                break;
-            }
-        }
 
-        System.out.println("=====================Bubble sort=========================");
-
-        // bubble sort (So sánh 2 phần tử cạnh nhau)
-
-        int arr[] = { 2, 5, -2, 6, -3, 8, 0, -7, -9, 4 };
-        System.out.println("Array Before Bubble Sort");
-
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
-        }
-        System.out.println();
-        bubbleSort(arr); // gọi hàm bubble
-        System.out.println("Array After Bubble Sort");
-
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
-        }
 
         System.out.println("=====================Dimension of Array(Kích thước của mảng)=========================");
         String[] data = new String[5];
         System.out.println("Dimension 1: " + data.length);
 
-        System.out.println("=====================Array output=========================");
-
-        String[] greeting = new String[3];
-        greeting[0] = "This is the greeting";
-        greeting[1] = "for all the readers from";
-        greeting[2] = "Java Source .";
-
-        for (int i = 0; i < greeting.length; i++) {
-            System.out.println(greeting[i]);
-        }
-
-        String[] arrStr = new String[] { "Tutorials", "Point", ".com" };
-
-        //  toString() của mảng được sử dụng để hiển thị tất cả các phần tử của một mảng.
-        System.out.println(Arrays.toString(arrStr));
-
-        String[][] deepArr = new String[][] { { "Sai", "Gopal" }, { "Pallavi", "Priya" } };
-        System.out.println(Arrays.toString(deepArr)); // no output
-
-        //  Arrays.deepToString () được sử dụng để nhận được biểu diễn chuỗi của các mảng đa chiều.
-        System.out.println(Arrays.deepToString(deepArr));
-
-        System.out.println("=====================Search Max Min=========================");
-
-        Integer[] numbers = { 8, 2, 7, 1, 4, 9, 5 };
-
-        /*Collection có nhiều phương thức tĩnh (gọi mà không cần tạo ra đối tượng Collections) tiện dụng như:
-        sort(Collection c) sắp xếp danh sách
-        max(Collection c) lấy giá trị lớn nhất trong c
-        reverse(List list) đảo ngược thứ tự
-        shuffle(List list) sắp xếp danh sách ngẫu nhiên*/
-
-        int min = (int) Collections.min(Arrays.asList(numbers));
-        int max = (int) Collections.max(Arrays.asList(numbers));
-
-        System.out.println("Min number: " + min);
-        System.out.println("Max number: " + max);
-
-        //
-
-        int numbersArr[] = new int[] { 8, 2, 7, 1, 4, 9, 5 };
-        int s = numbersArr[0];
-        int l = numbersArr[0];
-
-        for (int i = 1; i < numbersArr.length; i++) {
-            if (numbersArr[i] > l) {
-                l = numbersArr[i];
-            } else if (numbersArr[i] < s) {
-                s = numbersArr[i];
-            }
-        }
-        System.out.println("Largest Number is : " + l);
-        System.out.println("Smallest Number is : " + s);
-
-        System.out.println("=====================Merge two arrays=========================");
-        // hợp nhất 2 mảng
-        // asList() được sử dụng để tạo một danh sách từ một mảng được chỉ định.
-        String strA[] = { "A", "E", "I" };
-        String strB[] = { "O", "U" };
-        List list = new ArrayList(Arrays.asList(strA));
-
-        // addAll() chèn tất cả các phần tử trong tập hợp đã chỉ định vào danh sách này, bắt đầu từ vị trí đã chỉ định.
-        list.addAll(Arrays.asList(strB));
-        Object[] c = list.toArray();
-        System.out.println(Arrays.toString(c));
-
-        //
-
-        int[] arrNumberA = { 1, 2, 3, 4 };
-        int[] arrNumberB = { 4, 16, 1, 2, 3, 22 };
-        int[] arrNumberC = new int[arrNumberA.length + arrNumberB.length];
-        int count = 0;
-
-        for (int i = 0; i < arrNumberA.length; i++) {
-            arrNumberC[i] = arrNumberA[i];
-            count++;
-        }
-        for (int j = 0; j < arrNumberB.length; j++) {
-            arrNumberC[count++] = arrNumberB[j];
-        }
-        for (int i = 0; i < arrNumberC.length; i++)
-            System.out.print(arrNumberC[i] + " ");
-        System.out.println();
-        System.out.println("=====================Arrays.fill=========================");
-
-        // arrays.fill hàm giúp thay đổi giá trị của tất cả các phần tử trong mảng thành một giá trị mới.
-        int arrFill[] = new int[6];
-        Arrays.fill(arrFill, 100);
-
-        for (int i = 0, n = arrFill.length; i < n; i++) {
-            System.out.println(arrFill[i]);
-        }
-        System.out.println();
-        Arrays.fill(arrFill, 3, 6, 50); // (int[] a, int from_Index, int to_Index, int val)
-
-        for (int i = 0, n = arrFill.length; i < n; i++) {
-            System.out.println(arrFill[i]);
-        }
 
         System.out.println("=====================Extending an Array=========================");
 

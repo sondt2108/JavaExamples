@@ -11,54 +11,6 @@ public class javaStringExamples {
 
     public static void main(String[] args) {
         String str = "hello java ";
-        String anotherString = "Hello java";
-
-
-        System.out.println("=============compareTo================");
-
-        // //compareTo() so sánh các chuỗi cho trước với chuỗi hiện tại theo thứ tự từ điển.
-
-        // System.out.println(str.compareTo(anotherString));
-        // System.out.println(str.compareToIgnoreCase(anotherString)); // Không phân biệt chữ thường và chữ hoa
-
-        System.out.println("=============Equals================");
-        
-        
-        // equals() so sánh hai chuỗi đưa ra dựa trên nội dung của chuỗi. Nếu hai chuỗi khác nhau nó trả về false. Nếu hai chuỗi bằng nhau nó trả về true.
-
-        String s1 = "tutorialspoint";
-        String s2 = "tutorialspoint";
-        String s3 = new String("tutorialspoint"); //
-        // System.out.println(s1.equals(s2));
-        // System.out.println(s2.equals(s3));
-
-        // System.out.println("=============String compare by == operator================");
-        // // String compare by == operator (So sánh chuổi bằng toán tử)
-        // System.out.println(s1 == s2);
-        // System.out.println(s2 == s3);
-
-        // System.out.println("=============Replace================");
-        // // replace() được sử dụng để thay thế tất cả các ký tự hoặc chuỗi cũ thành ký tự hoặc chuỗi mới.
-        // System.out.println("replace: " + str.replace('H', 'W'));
-        // // replaceFirst() sẽ tìm và thay thế chuỗi con đầu tiên trong chuỗi ban đầu bằng
-        // // chuỗi truyền vào.
-        // System.out.println("replaceFirst: " + str.replaceFirst("He", "Wa"));
-        // // replaceAll() trả về một chuỗi bằng cách thay thế tất cả ký tự khớp với chuỗi
-        // // truyền vào.
-        // System.out.println("replaceAll" + str.replaceAll("He", "Ha"));
-
-        System.out.println("=============Revese================");
-        // revese String (đảo ngược chuổi)
-
-        // StringBuilder trong Java được sử dụng để tạo chuỗi có thể thay đổi
-        StringBuilder input = new StringBuilder();
-
-        input.append(str);
-        System.out.println("String before reverse: " + input);
-
-        input.reverse();
-
-        System.out.println("String after reverse: " + input);
 
         System.out.println("=============removeCharAt================");
         // charAt() trả về giá trị Char của chuỗi tại vị trí có chỉ số index được chỉ định được chỉ định. Index bắt đầu từ 0.
@@ -106,12 +58,12 @@ public class javaStringExamples {
             System.out.println(w);
         }
 
-        // System.out.println("=============uppercase================");
+         System.out.println("=============uppercase================");
 
-        // // toUpperCase() được sử dụng để chuyển chuỗi về dạng chữ hoa.
-        // String strUpper = str.toUpperCase();
-        // System.out.println("Original String: " + str);
-        // System.out.println("String changed to upper case: " + strUpper);
+         // toUpperCase() được sử dụng để chuyển chuỗi về dạng chữ hoa.
+         String strUpper = str.toUpperCase();
+         System.out.println("Original String: " + str);
+         System.out.println("String changed to upper case: " + strUpper);
 
         System.out.println("=============String region match================");
         // regionMatches() trong Java được sử dụng để kiểm tra nếu hai chuỗi là bằng nhau.
@@ -194,18 +146,7 @@ public class javaStringExamples {
         //         + (endTime3 - startTime3)
         //         + " ms");
 
-        System.out.println("=============format strings================");
 
-        String name = "Hello World";
-        String strFormat1 = String.format("name %s", name);
-        String strFormat2 = String.format("value %f", 32.33434);
-        String strFormat3 = String.format("value %32.2f", 32.33434);
-        System.out.print(strFormat1);
-        System.out.print("\n");
-        System.out.print(strFormat2);
-        System.out.print("\n");
-        System.out.print(strFormat3);
-        System.out.print("\n");
 
         // System.out.println("=============Concatenate Strings================");
 
@@ -240,14 +181,7 @@ public class javaStringExamples {
         //         + "using StringBuffer : "
         //         + (endTime5 - startTime5) + " ms");
 
-        System.out.println("=============String unicode================");
 
-        String test_string = "Welcome to TutorialsPoint";
-        System.out.println("String under test is = " + test_string);
-
-        System.out.println("Unicode code point at"
-                + " position 5 in the string is = "
-                + test_string.codePointAt(0));
 
     }
 
