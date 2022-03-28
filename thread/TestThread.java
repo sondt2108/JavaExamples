@@ -3,7 +3,6 @@ package thread;
 public class TestThread {
     public static void main(String[] args) {
         Printer printer = new Printer();
-
         MyRunnable r1 = new MyRunnable(true, printer);// isOdd = true
         Thread t1 = new Thread(r1);
         MyRunnable r2 = new MyRunnable(false, printer);// isOdd = false
@@ -13,7 +12,8 @@ public class TestThread {
     }
 }
 
-// khai báo đồng bộ trên phương thức tĩnh thì khi đó cùng 1 thời điểm chỉ có 1 thread được thực thi trên 1 class
+// khai báo đồng bộ trên phương thức tĩnh thì khi đó cùng 1 thời điểm chỉ có 1
+// thread được thực thi trên 1 class
 
 class Printer {
     private boolean isOdd = false;
@@ -25,7 +25,6 @@ class Printer {
                 try {
                     wait();
                 } catch (InterruptedException e) {
-
                     e.printStackTrace();
                 }
             }
@@ -47,18 +46,15 @@ class Printer {
             // printEven() đang chờ : (isOdd = true => print number = 8 => isOdd = false)
             // 5 : number = 9, isOdd = false => print -> 9 => isOdd = true => Đánh thức hàm
             // printEven() đang chờ : (isOdd = true => print number = 10 => isOdd = false)
-
             if (isOdd == true) {
                 try {
                     wait();
                 } catch (InterruptedException e) {
-
                     e.printStackTrace();
                 }
             }
             System.out.println("odd : " + number);
             isOdd = true;
-            System.out.println("isOdd----------------------->4 :" + isOdd);
             notifyAll();
         }
     }
@@ -79,15 +75,12 @@ class MyRunnable implements Runnable {
         for (int number = isOdd == true ? 1 : 2; number < 11; number += 2) {
             if (isOdd) {
                 // isOdd = true
-                // number = 2 -> 4 -> 6 -> 8 -> 10
-                printer.printOdd(number);
-
-            } else {
-
-                // isOdd = false
                 // number = 1 -> 3 -> 5 -> 7 -> 9
+                printer.printOdd(number);
+            } else {
+                // isOdd = false
+                // number = 2 -> 4 -> 6 -> 8 -> 10
                 printer.printEven(number);
-
             }
         }
     }
